@@ -22,7 +22,7 @@ module.exports = function(bundler) {
     const header = fs.readFileSync(GreasemonkeyHeaderFilePath, "utf-8");
     const userScripts = new Set();
     bundler.on('bundled', (bundle) => {
-        if (/\.user\.js$/.test(bundle.name)) {
+        if (/\.user\.[tj]s[x]?$/.test(bundle.name)) {
             if (!userScripts.has(bundle.name)) {
                 userScripts.add(bundle.name);
             }
